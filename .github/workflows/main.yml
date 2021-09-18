@@ -29,8 +29,16 @@ jobs:
         with:
           node-version: 12
 
+      - name: Installing yarn
+        uses: Borales/actions-yarn@v2.3.0
+        with:
+          cmd: install
+
+
       - name: Creating build
-        run: npm run build
+        run: sudo yarn build
+
+
       # Runs a set of commands using the runners shell
       - name: Installing SURGE
         run: npm install -g surge
